@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "questions",
+  "info": {
+    "name": "question",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "answer": {
+      "type": "richtext"
+    },
+    "programs": {
+      "via": "questions",
+      "collection": "program"
+    },
+    "question": {
+      "type": "string"
+    }
+  }
+}

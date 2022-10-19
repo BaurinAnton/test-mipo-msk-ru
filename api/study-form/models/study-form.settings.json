@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "study_forms",
+  "info": {
+    "name": "studyForm",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "programs": {
+      "via": "study_form",
+      "collection": "program"
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}

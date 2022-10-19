@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "teachers",
+  "info": {
+    "name": "Teacher",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": false
+    },
+    "portrait": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "achievements": {
+      "type": "text",
+      "required": false
+    },
+    "specialization": {
+      "type": "string",
+      "required": false
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "programs": {
+      "via": "teachers",
+      "collection": "program"
+    },
+    "numeric_order": {
+      "via": "teacher",
+      "model": "numeric-order"
+    }
+  }
+}

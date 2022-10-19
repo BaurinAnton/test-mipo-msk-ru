@@ -1,0 +1,255 @@
+{
+  "kind": "collectionType",
+  "collectionName": "programs",
+  "info": {
+    "name": "Program",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "heroPicture": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "slug": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext",
+      "required": false,
+      "maxLength": 300
+    },
+    "fullTitle": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text",
+      "required": false
+    },
+    "resumeTitle": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": false
+    },
+    "entrySalary": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "biginteger",
+      "required": false
+    },
+    "qualification": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "teachers": {
+      "collection": "teacher",
+      "via": "programs",
+      "dominant": true
+    },
+    "study_field": {
+      "model": "study-field",
+      "via": "programs",
+      "required": true
+    },
+    "category": {
+      "via": "programs",
+      "model": "category",
+      "required": true
+    },
+    "study_form": {
+      "via": "programs",
+      "model": "study-form"
+    },
+    "whatYouWillLearn": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "program.what-you-will-learn"
+    },
+    "forWhom": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "program.for-whom"
+    },
+    "questions": {
+      "via": "programs",
+      "collection": "question",
+      "dominant": true
+    },
+    "resumeSkills": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "program.resume-skills"
+    },
+    "jobTitles": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "program.job-titles"
+    },
+    "shortContents": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "program.short-contents"
+    },
+    "timenprice": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "program.timenprice"
+    },
+    "forWhomPicture": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "sub_study_fields": {
+      "collection": "sub-study-fields",
+      "via": "programs",
+      "dominant": true
+    },
+    "reviews": {
+      "collection": "review",
+      "via": "program"
+    },
+    "sectionOurGraduates": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "program.section-our-graduates"
+    },
+    "SectionRelevantContentOnly": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "program.section-relevant-content-only"
+    },
+    "SectionInternationalExpertsItems": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "program.section-international-experts"
+    },
+    "StudyCostItems": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "program.study-cost-items"
+    },
+    "SectionHowStudyingGoesItems": {
+      "type": "component",
+      "repeatable": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "program.section-how-studying-goes-items"
+    }
+  }
+}
